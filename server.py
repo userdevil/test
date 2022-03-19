@@ -6,29 +6,19 @@ TELEGRAM_TOKEN = '5159256749:AAGXCe1j3yxC-x-i3yBKwznj_-bOIk7JyMw'
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
-resp= ""
+# Handle '/start' and '/help'
+@bot.message_handler(commands=['help', 'start'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+Hi there, I am EchoBot.
+I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
+""")
 
-def gen_markup():
-    markup = InlineKeyboardMarkup()
-    markup.row_width = 2
-    markup.add(InlineKeyboardButton("MP4", callback_data="cb_yes"),
-                               InlineKeyboardButton("MP3", callback_data="cb_no"))
-    return markup
 
-@bot.callback_query_handler(func=lambda call: True)
-def callback_query(call):
-    if call.data == "cb_yes":
-        bot.answer_callback_query(call.id, "Answer is MP4")
-        resp = "https://loader.to/api/button/?url=","message"
-    elif call.data == "cb_no":
-        bot.answer_callback_query(call.id, "Answer is MP3")
-        
+# Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
-    bot.reply_to(message, resp)
+    bot.reply_to(message, message.text)
 
-@bot.message_handler(func=lambda message: True)
-def message_handler(message):
-    bot.send_message(message.chat.id, "Select formet", reply_markup=gen_markup())
 
 bot.infinity_polling()
