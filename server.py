@@ -6,6 +6,8 @@ TELEGRAM_TOKEN = '5159256749:AAGXCe1j3yxC-x-i3yBKwznj_-bOIk7JyMw'
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
+resp= ""
+
 def gen_markup():
     markup = InlineKeyboardMarkup()
     markup.row_width = 2
