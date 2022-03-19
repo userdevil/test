@@ -1,24 +1,13 @@
-from bot import telegram_bot
+import telebot
 
-mybot = telegram_bot("config.txt")
+bot = telebot.TeleBot("5159256749:AAGXCe1j3yxC-x-i3yBKwznj_-bOIk7JyMw")
 
-update_id = None
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+	bot.reply_to(message, "Howdy, how are you doing?")
 
-def make_reply(msg):
-	if msg is not None:
-		return msg
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+	bot.reply_to(message, message.text)
 
-while True:
-	print("...")
-	updates = mybot.get_updates(offset=update_id)
-	updates = updates["result"]
-	if updates:
-		for item in updates:
-			update_id = item["update_id"]
-			try:
-				message = item["message"]["text"]
-			except:
-				message = None
-			from_ = item["message"]["from"]["id"]
-			reply = make_reply(message)
-			mybot.send_message(reply, from_)
+bot.infinity_polling()
