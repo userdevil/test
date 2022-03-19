@@ -21,7 +21,7 @@ I am here to echo your kind words back to you. Just say anything nice and I'll s
 def echo_message(message):
     bot.reply_to(message, message.text)
 
-if msg == hi:
+if msg == "hi":
     @bot.message_handler(func=lambda message: True)
     def echo_message(message):
         r = "hello" 
