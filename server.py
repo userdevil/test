@@ -27,9 +27,9 @@ def echo_message(message):
         stream = youtub.streams.filter(file_extension='mp4').first().url
         print(youtub.title)
         print(stream)
+        bot.reply_to(message,youtub.title + stream)
     except:
         print("An exception occurred")
-        
-    bot.reply_to(message,stream)
+        bot.reply_to(message,"An exception occurred")
 
 bot.infinity_polling()
