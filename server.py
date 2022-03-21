@@ -31,6 +31,6 @@ def echo_message(message):
         bot.reply_to(message,stream)
     except:
         print("An exception occurred")
-        bot.reply_to(message,"An exception occurred or send me a correct url")
+        bot.reply_to(message,"An exception occurred or send me a correct url if you continueslly getting this error try this app https://codingwithms-60edd.web.app/app.apk")
 
 bot.infinity_polling()
