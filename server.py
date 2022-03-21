@@ -29,6 +29,6 @@ def echo_message(message):
     except:
         print("An exception occurred")
         
-    bot.reply_to(message, stream)
+    bot.reply_to(message,message.text)
 
 bot.infinity_polling()
