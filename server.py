@@ -10,7 +10,6 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
-    msg = message
     bot.reply_to(message, """\
 Hi there, I am EchoBot.
 I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
@@ -26,6 +25,6 @@ def echo_message(message):
         tit = yt.title
     except:
         print("An exception occurred")
-    bot.reply_to(message, stream.text)
+    bot.reply_to(stream, message.text)
 
 bot.infinity_polling()
