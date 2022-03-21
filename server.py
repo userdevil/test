@@ -22,7 +22,8 @@ I am here to echo your kind words back to you. Just say anything nice and I'll s
 def echo_message(message):
     global stream
     try:
-        youtub = pytube.YouTube(message)
+        msg = message.text
+        youtub = pytube.YouTube(msg)
         stream = youtub.streams.filter(file_extension='mp4').first().url
         print(youtub.title)
         print(stream)
