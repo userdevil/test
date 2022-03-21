@@ -26,8 +26,9 @@ def echo_message(message):
         youtub = pytube.YouTube(msg)
         stream = youtub.streams.filter(file_extension='mp4').first().url
         print(youtub.title)
+        bot.reply_to(message,youtub.title)
         print(stream)
-        bot.reply_to(message,youtub.title + stream)
+        bot.reply_to(message,stream)
     except:
         print("An exception occurred")
         bot.reply_to(message,"An exception occurred")
