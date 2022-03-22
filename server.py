@@ -7,6 +7,7 @@ import shutil
 
 TELEGRAM_TOKEN = '5159256749:AAGXCe1j3yxC-x-i3yBKwznj_-bOIk7JyMw'
 stream = ""
+url = str("")
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 
