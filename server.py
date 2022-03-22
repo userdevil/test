@@ -51,7 +51,7 @@ def echo_message(message):
         pic_urls = prepare_urls(pic_matches)
         
         print(vid_urls)
-        print(pic_uurls)
+        print(pic_urls)
     else:
         print("An exception occurred")
         bot.reply_to(message,"An exception occurred or send me a correct url if you continueslly getting this error try this app https://codingwithms-60edd.web.app/app.apk")
