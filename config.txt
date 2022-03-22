@@ -1,2 +1,0 @@
-[creds]
-token = 5159256749:AAGXCe1j3yxC-x-i3yBKwznj_-bOIk7JyMw
