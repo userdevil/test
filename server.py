@@ -14,7 +14,7 @@ def send_welcome(message):
       for quote in quotes:
             stream = quote
       while True:
-            for m in message:
+            for m in messages:
                  chatid = m.chat.id
             bot.send_message(chatid, stream)
             time.sleep(4)
