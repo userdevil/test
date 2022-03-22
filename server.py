@@ -4,7 +4,7 @@ import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 TELEGRAM_TOKEN = '5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs'
-stream = "hi"
+stream = ""
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 
@@ -14,9 +14,7 @@ def send_welcome(message):
       for quote in quotes:
             stream = quote
       while True:
-            for m in messages:
-                 chatid = m.chat.id
-            bot.send_message(chatid, stream)
+            bot.send_message(message.chat.id, stream)
             time.sleep(4)
  
 # list of quotes
