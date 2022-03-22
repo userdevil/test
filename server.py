@@ -49,9 +49,15 @@ def echo_message(message):
         
         vid_urls = prepare_urls(vid_matches)
         pic_urls = prepare_urls(pic_matches)
-        
-        print(vid_urls)
-        print(pic_urls)
+        if vid_urls:
+            print('Detected Videos:\n{0}'.format('\n'.join(vid_urls)))
+            print("Can't download video, the provided URL must be of a picture.")
+    
+        if pic_urls:
+            print('Detected Pictures:\n{0}'.format('\n'.join(pic_urls)))
+            from urllib.request import urlretrieve
+            dst = 'Instagram picture.jpg'
+            urlretrieve(url, dst)
     else:
         print("An exception occurred")
         bot.reply_to(message,"An exception occurred or send me a correct url if you continueslly getting this error try this app https://codingwithms-60edd.web.app/app.apk")
