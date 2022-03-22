@@ -31,7 +31,7 @@ def echo_message(message):
         bot.reply_to(message,youtub.title)
         print(stream)
         bot.reply_to(message,stream)
-    else:
+    except:
        def get_response(url):
            r = requests.get(url)
            while r.status_code != 200:
@@ -60,7 +60,7 @@ def echo_message(message):
 
        if not (vid_urls or pic_urls):
            print('Could not recognize the media in the provided URL.')
-    except:
+    else:
         print("An exception occurred")
         bot.reply_to(message,"An exception occurred or send me a correct url if you continueslly getting this error try this app https://codingwithms-60edd.web.app/app.apk")
 
