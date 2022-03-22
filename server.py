@@ -28,6 +28,13 @@ def send_welcome(message):
       while True:
             bot.send_message(message.chat.id, stream)
             time.sleep(4)
+      def test_send_message():
+        text = 'CI Test Message'
+        ret_msg = bot.send_message(CHAT_ID, text)
+        assert ret_msg.message_id
+
+      if current_time=='22:43:00':
+          test_send_message()
  
 # list of quotes
 quotes = [
