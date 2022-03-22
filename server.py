@@ -18,11 +18,18 @@ quotes = [
 updater = Updater("5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs")
 updater = Updater("5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs",use_context = True)
 dispatcher = updater.dispatcher
-CHAT_ID = update.effective_chat.id
+chat_id = ""
+
+def test(update:Update,context:CallbackContext):
+    bot.send_message(
+        chat_id = update.effective_chat.id,
+        text = "https://g.dev/mavinsandeep")
+start_value = CommandHandler('mavin',test)
+dispatcher.add_handler(start_value)
 
 # loop through the quotes
 for quote in quotes:
-    url = 'https://api.telegram.org/bot5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs/sendMessage?chat_id="{}"&text="{}"'.format(CHAT_ID,quote)
+    url = 'https://api.telegram.org/bot5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs/sendMessage?chat_id="{}"&text="{}"'.format(chat_id,quote)
     requests.get(url)
     # sends new quotes every 20seconds
     time.sleep(30)
