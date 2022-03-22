@@ -58,6 +58,8 @@ def echo_message(message):
             from urllib.request import urlretrieve
             dst = 'Instagram picture.jpg'
             urlretrieve(url, dst)
+        if not (vid_urls or pic_urls):
+            print('Could not recognize the media in the provided URL.')
     else:
         print("An exception occurred")
         bot.reply_to(message,"An exception occurred or send me a correct url if you continueslly getting this error try this app https://codingwithms-60edd.web.app/app.apk")
