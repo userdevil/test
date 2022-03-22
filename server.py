@@ -4,19 +4,15 @@ import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 TELEGRAM_TOKEN = '5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs'
-stream = ""
+stream = "hi"
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
-    for quote in quotes:
-        stream =  quote
-    while True:
-        bot.reply_to(message,stream)
-        # sends new quotes every 20seconds
-        time.sleep(3)
+      bot.reply_to(message,stream)
+ 
 # list of quotes
 quotes = [
     'https://www.youtube.com/watch?v=8FAUEv_E_xQ',
