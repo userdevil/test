@@ -33,7 +33,25 @@ def echo_message(message):
         print(stream)
         bot.reply_to(message,stream)
     except:
-        print("x")
+        def get_response(url):
+            r = request.get(url)
+            while r.status_code != 200:
+                r.raw.decode_content = True
+                r = requests.get(url, stream = True)
+            return r.text
+        def prepare_urls(matches):
+            return list({match.replace("\\u0026", "&") for match in matches})
+        url = message.text
+        response = get_response(url)
+        
+        vid_matches = re.findall('"video_url":"([^"]+)"', response)
+        pic_matches = re.findall('"display_url":"([^"]+)"', response)
+        
+        vid_urls = prepare_urls(vid_matches)
+        pic_urls = prepare_urls(pic_matches)
+        
+        print(vid_urls)
+        print(pic_uurls)
     else:
         print("An exception occurred")
         bot.reply_to(message,"An exception occurred or send me a correct url if you continueslly getting this error try this app https://codingwithms-60edd.web.app/app.apk")
