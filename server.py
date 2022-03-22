@@ -14,7 +14,7 @@ def send_welcome(message):
       for quote in quotes:
             stream = quote
       while True:
-            bot..send_message(chatid, stream)
+            bot.send_message(chatid, stream)
             time.sleep(4)
  
 # list of quotes
