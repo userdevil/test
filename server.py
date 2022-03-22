@@ -16,7 +16,7 @@ def test_send_message():
         ret_msg = bot.send_message(CHAT_ID, text)
         assert ret_msg.message_id
 
-if current_time=='10:22:00':
+if current_time=='22:38:00':
     test_send_message()
 
 
