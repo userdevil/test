@@ -22,7 +22,7 @@ CHAT_ID = update.effective_chat.id
 
 # loop through the quotes
 for quote in quotes:
-    url = 'https://api.telegram.org/bot5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs/sendMessage?chat_id=&text="{}"'.format(quote)
+    url = 'https://api.telegram.org/bot5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs/sendMessage?chat_id="{}"&text="{}"'.format(CHAT_ID,quote)
     requests.get(url)
     # sends new quotes every 20seconds
     time.sleep(30)
