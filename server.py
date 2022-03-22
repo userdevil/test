@@ -34,8 +34,7 @@ def echo_message(message):
         bot.reply_to(message,stream)
     except:
         def get_response(url):
-            import requests
-            r = request.get(url)
+            r = requests.get(url)
             while r.status_code != 200:
                 r.raw.decode_content = True
                 r = requests.get(url, stream = True)
