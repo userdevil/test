@@ -17,7 +17,7 @@ quotes = [
 ]
 updater = Updater("5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs")
 updater = Updater("5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs",use_context = True)
-dispatcher = updater.
+dispatcher = updater.dispatcher
 CHAT_ID = update.effective_chat.id
 
 # loop through the quotes
