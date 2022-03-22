@@ -3,4 +3,3 @@ beautifulsoup4
 lxml
 pyTelegramBotAPI
 pytube
-shutil
