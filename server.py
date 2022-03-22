@@ -12,7 +12,7 @@ quotes = [
 
 # loop through the quotes
 for quote in quotes:
-    url = 'https://api.telegram.org/bot5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs/sendMessage?chat_id=CHAT_ID&text="{}"'.format(quote)
+    url = 'https://api.telegram.org/bot5245409735:AAH4IX_xxue3-lB1YTUEH1bxz1TqEFl9bFs/sendMessage?chat_id=1224707304&text="{}"'.format(quote)
     requests.get(url)
     # sends new quotes every 20seconds
     time.sleep(30)
