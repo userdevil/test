@@ -21,3 +21,4 @@ quotes = [
     'https://www.youtube.com/watch?v=tYSrY4iPX6w',
     'https://www.youtube.com/watch?v=w7Fjxf62t8E'
 ]
+bot.infinity_polling()
