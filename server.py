@@ -11,7 +11,11 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
-      bot.reply_to(message,stream)
+      for quote in quotes:
+            stream = quote
+      while True:
+            bot.reply_to(message,stream)
+            time.sleep(4)
  
 # list of quotes
 quotes = [
