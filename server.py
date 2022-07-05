@@ -38,10 +38,7 @@ def send_welcome(message):
  
 # list of quotes
 quotes = [
-    'https://www.youtube.com/watch?v=8FAUEv_E_xQ',
-    'https://www.youtube.com/watch?v=jmwU1iAC-IE',
-    'https://www.youtube.com/watch?v=ATElufr0OiE',
-    'https://www.youtube.com/watch?v=tYSrY4iPX6w',
-    'https://www.youtube.com/watch?v=w7Fjxf62t8E'
+    '/led_on',
+    '/led_off',
 ]
 bot.infinity_polling()
